@@ -3,7 +3,7 @@ def what_to_do_with_ongoing_call():
     import numpy as np
     import cv2
     import time
-    
+    from check_call import check
     
     cap =  cv2.VideoCapture(1)
     
