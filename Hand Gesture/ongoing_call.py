@@ -3,9 +3,9 @@ def what_to_do_with_ongoing_call():
     import numpy as np
     import cv2
     import time
-    from check_call import check
+    #from check_call import check
     
-    cap =  cv2.VideoCapture(1)
+    cap =  cv2.VideoCapture(0)
     
     
     #fist_cascade = cv2.CascadeClassifier('fist.xml')
@@ -14,10 +14,10 @@ def what_to_do_with_ongoing_call():
     #start_time = time.time()
     
     while (True):
-        if (check_call()==false): #function_name_will_change
+        '''if (check_call()==false): #function_name_will_change
             cap.release()   
             cv2.destroyAllWindows()
-            return 0   
+            return 0   '''
         ret, img=cap.read()
         gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
         
@@ -42,4 +42,4 @@ def what_to_do_with_ongoing_call():
             return 1
         cv2.waitKey(150)
 
-#print(what_to_do_with_ongoing_call())
+print(what_to_do_with_ongoing_call())

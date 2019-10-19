@@ -5,9 +5,9 @@ import pygame #For playing sound
 pygame.mixer.init()
 pygame.mixer.music.load('C:/Users/HP/Documents/GitHub/Alexios/Drowsiness/beep-01a.wav')
 
-import numpy as np
+#import numpy as np
 
-import imutils
+#import imutils
 import dlib
 import cv2
 temp1=0
@@ -62,10 +62,10 @@ while (True):
         #cv2.rectangle(image, (x, y), (x + w, y + h), (0, 255, 0), 2)
 
 
-        cv2.putText(image, "Face #{}".format(i + 1), (x - 5, y - 5),
-        cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 255), 1)
-        #cv2.putText(image, "EAR {:.3f}".format(ear), (x - 25, y - 25),
+        #cv2.putText(image, "Face #{}".format(i + 1), (x - 5, y - 5),
         #cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 255), 1)
+        cv2.putText(image, " {:.3f}".format(ear), (x - 25, y - 25),
+        cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 255), 1)
 
         leftEyeHull = cv2.convexHull(eye1)
         rightEyeHull = cv2.convexHull(eye2)
