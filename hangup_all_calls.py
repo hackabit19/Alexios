@@ -6,7 +6,7 @@ from check_call_first import checkfirst
 
 def hangup:
     bus = dbus.SystemBus()
-
+    print("Currently in hangup_all_calls.py")
     manager = dbus.Interface(bus.get_object('org.ofono', '/'),
                             'org.ofono.Manager')
 

@@ -27,6 +27,7 @@ def checkfirst():
             for path, properties in calls:
                 state = properties["State"]
                 print "[ %s ] %s" % (path, state)
+                print("Currently in check_call_first.py")
 
                 if state == "incoming":
                     incoming_call()

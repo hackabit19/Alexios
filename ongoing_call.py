@@ -16,6 +16,7 @@ def ongoing_call():
     #start_time = time.time()
     
     while (True):
+        print("Currently in ongoing_call.py")
         if (check()==0): #function_name_will_change
             cap.release()   
             cv2.destroyAllWindows()
