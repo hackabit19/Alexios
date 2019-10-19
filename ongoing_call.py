@@ -7,7 +7,7 @@ def ongoing_call():
     from hangup_all_calls import hangup
     from check_call_first import checkfirst
 
-    cap =  cv2.VideoCapture(1)
+    cap =  cv2.VideoCapture(0)
     
     
     #fist_cascade = cv2.CascadeClassifier('fist.xml')
@@ -16,6 +16,7 @@ def ongoing_call():
     #start_time = time.time()
     
     while (True):
+        print("Currently in ongoing_call.py")
         if (check()==0): #function_name_will_change
             cap.release()   
             cv2.destroyAllWindows()

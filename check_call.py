@@ -25,6 +25,7 @@ def check():
         for path, properties in calls:
             state = properties["State"]
             print "[ %s ] %s" % (path, state)
+            print("Currently in check_call.py")
 
             if state == "incoming":
                 return 1
