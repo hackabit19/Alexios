@@ -7,7 +7,7 @@ def ongoing_call():
     from hangup_all_calls import hangup
     from check_call_first import checkfirst
 
-    cap =  cv2.VideoCapture(1)
+    cap =  cv2.VideoCapture(0)
     
     
     #fist_cascade = cv2.CascadeClassifier('fist.xml')

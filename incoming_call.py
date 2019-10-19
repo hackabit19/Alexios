@@ -6,7 +6,7 @@ def incoming_call():
     import time
     from check_call import check
     from answer_calls import answer_call
-    cap =  cv2.VideoCapture(1)
+    cap =  cv2.VideoCapture(0)
     
     
     fist_cascade = cv2.CascadeClassifier('fist.xml')
