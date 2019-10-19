@@ -5,33 +5,34 @@ import dbus
 from incoming_call import incoming_call
 
 def checkfirst():
-    bus = dbus.SystemBus()
+    while(true):
+        bus = dbus.SystemBus()
 
-    manager = dbus.Interface(bus.get_object('org.ofono', '/'),
-                            'org.ofono.Manager')
+        manager = dbus.Interface(bus.get_object('org.ofono', '/'),
+                                'org.ofono.Manager')
 
-    modems = manager.GetModems()
+        modems = manager.GetModems()
 
-    for path, properties in modems:
-        print "[ %s ]" % (path)
+        for path, properties in modems:
+            print "[ %s ]" % (path)
 
-        if "org.ofono.VoiceCallManager" not in properties["Interfaces"]:
-            continue
+            if "org.ofono.VoiceCallManager" not in properties["Interfaces"]:
+                continue
 
-        mgr = dbus.Interface(bus.get_object('org.ofono', path),
-                        'org.ofono.VoiceCallManager')
-        
-        calls = mgr.GetCalls()
-        
-        for path, properties in calls:
-            state = properties["State"]
-            print "[ %s ] %s" % (path, state)
+            mgr = dbus.Interface(bus.get_object('org.ofono', path),
+                            'org.ofono.VoiceCallManager')
+            
+            calls = mgr.GetCalls()
+            
+            for path, properties in calls:
+                state = properties["State"]
+                print "[ %s ] %s" % (path, state)
 
-            if state == "incoming":
-                incoming_call()
-                return 1
-            else:
-                return 0
+                if state == "incoming":
+                    incoming_call()
+                    return 1
+                else:
+                    return 0
 
 if __name__ == "__main__":
-    check()
+    checkfirst()
