@@ -12,7 +12,7 @@ def hangup:
 
     modems = manager.GetModems()
     modem = modems[0][0]
-
+    print("Currently in hangup_all_calls.py")
     if (len(sys.argv) == 2):
         modem = sys.argv[1]
 

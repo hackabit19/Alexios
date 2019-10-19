@@ -25,6 +25,7 @@ def answer_call():
         for path, properties in calls:
             state = properties["State"]
             print "[ %s ] %s" % (path, state)
+            print("Currently in answer_calls.py")
 
             if state != "incoming":
                 print("No Incoming calls!")

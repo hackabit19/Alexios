@@ -5,7 +5,7 @@ import dbus
 from incoming_call import incoming_call
 
 def checkfirst():
-    while(true):
+    while(True):
         bus = dbus.SystemBus()
 
         manager = dbus.Interface(bus.get_object('org.ofono', '/'),
@@ -15,6 +15,7 @@ def checkfirst():
 
         for path, properties in modems:
             print "[ %s ]" % (path)
+            print("Currently in check_call_first.py")
 
             if "org.ofono.VoiceCallManager" not in properties["Interfaces"]:
                 continue

@@ -15,7 +15,7 @@ while (True):
 
     fists = fist_cascade.detectMultiScale(gray, 1.3, 5)
     palms = palm_cascade.detectMultiScale(gray, 1.3, 5)
-        
+    print("Currently in hand_try_1.py")
     for (x,y,w,h) in fists:
         cv2.rectangle(img,(x,y),(x+w,y+h),(0,255,0),2)
 
