@@ -4,24 +4,18 @@ import time
 from math import floor
 
 cap =  cv2.VideoCapture(0)
-faceC = cv2.CascadeClassifier('haarcascade_frontalface_alt.xml')
+#faceC = cv2.CascadeClassifier('haarcascade_frontalface_alt.xml')
 sampleNo = 1
 while (True):
 
     ret, img=cap.read()
-    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-    faces = faceC.detectMultiScale(gray, 1.3,5)
-    for (x,y,w,h) in faces:
-        
-        roi = img[y:y+h, x:x+w]
-        
-        
-        cv2.imwrite("Dataset/User1." + str(sampleNo)+".jpg", roi)
-        print(x, y, w, h)
-    #cv2.imshow('img_taking', img)
-    cv2.waitKey(500)
+    #gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    #faces = faceC.detectMultiScale(gray, 1.3,5)
+    cv2.imwrite("dataset/Muskan/00" + str(sampleNo)+".jpg", img)
+    cv2.imshow('img_taking', img)
+    cv2.waitKey(1000)
     sampleNo = sampleNo+1
-    if (sampleNo>20):
+    if (sampleNo>30):
         break
 cap.release()
 cv2.destroyAllWindows()
